@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: VoidNebulon/glitch-fix-it
+  name: git-gateway
   branch: main
-
-local_backend: true
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -23,3 +20,5 @@ collections:
       - { label: "Featured", name: "featured", widget: "boolean" }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+

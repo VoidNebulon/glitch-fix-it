@@ -1,12 +1,9 @@
-Vercel Link: https://vercel.com/alihusnain101s-projects/glitch-fix-it
----
-# Made with the help of Firebase Studio
----
 # 🚀 Glitch Fix It  
 
 **Your daily source for tutorials, tips, and tricks in the world of web development.**  
 *Let’s fix those glitches together.*  
 
+# Made with the help of Firebase Studio
 ---
 
 ## 👥 About Us  

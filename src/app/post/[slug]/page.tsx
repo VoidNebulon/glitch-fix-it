@@ -134,37 +134,21 @@ export default async function PostPage({ params }: Props) {
             </div>
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
-              <time dateTime={post.date}>
-                {format(new Date(post.date), "MMMM d, yyyy")}
-              </time>
+              <time dateTime={post.date}>{format(new Date(post.date), 'MMMM d, yyyy')}</time>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" />
               <span>{readingTime} min read</span>
             </div>
           </div>
-          {/* <div className="mt-4 flex justify-center flex-wrap gap-2">
-              {post.categories.map(cat => <Badge key={cat} variant="secondary">{cat}</Badge>)}
-          </div> */}
           <div className="mt-4 flex justify-center flex-wrap gap-2">
-            {(Array.isArray(post.categories) ? post.categories : []).map(
-              (category) => (
-                <Badge key={category}>{category}</Badge>
-              )
-            )}
+              {post.categories.map(cat => <Badge key={cat} variant="secondary">{cat}</Badge>)}
           </div>
         </header>
 
         <div className="container mx-auto px-4 mt-8 max-w-5xl">
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-lg">
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              layout="fill"
-              objectFit="cover"
-              priority
-              data-ai-hint="blog cover"
-            />
+            <Image src={post.coverImage} alt={post.title} layout="fill" objectFit="cover" priority data-ai-hint="blog cover" />
           </div>
         </div>
 
@@ -173,40 +157,25 @@ export default async function PostPage({ params }: Props) {
             <div className="lg:col-span-8">
               <MdxContent content={post.content} />
               <div className="mt-12 flex justify-between items-center border-t pt-6">
-                <div className="tags flex flex-wrap gap-2">
-                  {(Array.isArray(post.tags)
-                    ? post.tags
-                    : []
-                  ).map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
+                <div className="flex flex-wrap gap-2">
+                    <span className="text-sm font-medium mr-2">Tags:</span>
+                    {post.tags.map(tag => <Badge key={tag} variant="outline">{tag}</Badge>)}
                 </div>
                 <ShareButtons title={post.title} url={postUrl} />
               </div>
-              {/* <div className="mt-12 lg:hidden">
+               <div className="mt-12 lg:hidden">
                 <AdSlot />
-              </div> */}
+              </div>
             </div>
             <aside className="lg:col-span-4 lg:sticky top-24 self-start space-y-8">
+              {/* TOC Placeholder */}
               <div className="p-6 rounded-2xl bg-muted border">
-                <h3 className="font-headline text-lg font-bold mb-4">
-                  Table of Contents
-                </h3>
+                <h3 className="font-headline text-lg font-bold mb-4">Table of Contents</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="hover:text-primary cursor-pointer">
-                    Introduction
-                  </li>
-                  <li className="hover:text-primary cursor-pointer pl-4">
-                    First Section
-                  </li>
-                  <li className="hover:text-primary cursor-pointer pl-4">
-                    Second Section
-                  </li>
-                  <li className="hover:text-primary cursor-pointer">
-                    Conclusion
-                  </li>
+                    <li className="hover:text-primary cursor-pointer">Introduction</li>
+                    <li className="hover:text-primary cursor-pointer pl-4">First Section</li>
+                    <li className="hover:text-primary cursor-pointer pl-4">Second Section</li>
+                    <li className="hover:text-primary cursor-pointer">Conclusion</li>
                 </ul>
               </div>
               <div className="hidden lg:block">
@@ -219,13 +188,9 @@ export default async function PostPage({ params }: Props) {
         {relatedPosts.length > 0 && (
           <section className="mt-24 border-t bg-muted">
             <div className="container mx-auto px-4 py-16">
-              <h2 className="text-3xl font-headline font-bold text-center mb-12">
-                Related Posts
-              </h2>
+              <h2 className="text-3xl font-headline font-bold text-center mb-12">Related Posts</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {relatedPosts.map((p) => (
-                  <PostCard key={p.slug} post={p} />
-                ))}
+                {relatedPosts.map(p => <PostCard key={p.slug} post={p} />)}
               </div>
             </div>
           </section>

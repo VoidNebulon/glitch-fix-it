@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: git-gateway
   branch: main
@@ -10,7 +11,7 @@ collections:
     label: "Posts"
     folder: "content/posts"      # adjust if your posts are elsewhere
     create: true
-    slug: "{{slug}}"             # will use the slug field below
+    slug: "{{slug}}"
     extension: "md"
     format: frontmatter
     fields:
@@ -19,11 +20,13 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Reading Time", name: "reading-time", widget: "string" }
-      - 
-        label: "Categories"
+
+      # ✅ Multi-select dropdown for categories
+      - label: "Categories"
         name: "categories"
-        widget: "list"        # 👈 dropdown
-        options:               # 👈 predefined options
+        widget: "select"
+        multiple: true
+        options:
           - Web Dev
           - Coding
           - Software
@@ -32,8 +35,15 @@ collections:
           - Latest News
           - Tutorials
           - Must Read
-        default: Must Read     # optional default
-      - { label: "Tags", name: "tags", widget: "list", default: [] }
+        default: ["Must Read"]
+
+      # ✅ Free-form list for tags
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        field: { label: "Tag", name: "tag", widget: "string" }
+
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }

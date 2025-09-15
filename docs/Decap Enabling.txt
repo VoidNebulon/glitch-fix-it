@@ -1,16 +1,5 @@
 ------------------------------------------
->edit/add these lines in "package.json":
-
---in "dependencies": (add)
-
 !!!"decap-cms-app": "^3.8.3",!!!
-!!!"react-netlify-identity": "^0.2.7",!!!
-
---in "scripts": (edit)
-
-from: !!!"dev": "next dev --turbopack -p 9002",!!!
-
-to: !!!"dev": "next dev",!!!
 ------------------------------------------
 >for token popup fix:
 

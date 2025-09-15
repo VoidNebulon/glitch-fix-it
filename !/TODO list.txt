@@ -1,1 +1,0 @@
--Get firebase studio to make a detailed README.md file

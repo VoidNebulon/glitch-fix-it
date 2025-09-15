@@ -1,12 +1,22 @@
 ---
-title: "Mastering React Hooks"
-slug: "mastering-react-hooks"
-date: "2024-07-20T10:00:00Z"
-author: "Jane Doe"
-categories: ["Web Dev", "Coding", "Software", "Editor's Pick"]
-tags: ["hooks", "state", "effects"]
+title: Mastering React Hooks
+slug: mastering-react-hooks
+date: 2024-07-20T10:00:00Z
+author: Jane Doe
+reading-time: 3 mins
+categories:
+  - Web Dev
+  - Coding
+  - Software
+  - Editor's Pick
+  - Must
+tags:
+  - hooks
+  - state
+  - effects
+  - webcoding
 featured: true
-coverImage: "https://picsum.photos/seed/101/1200/630"
+coverImage: https://picsum.photos/seed/101/1200/630
 ---
 
 ## Introduction to Hooks

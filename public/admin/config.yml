@@ -2,8 +2,6 @@ local_backend: false
 backend:
   name: git-gateway
   branch: main
-  identity_url: "https://glitchfixit.netlify.app/.netlify.app/.netlify/identity"
-  gateway_url: "https://glitchfixit.netlify.app/.netlify/git"
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
